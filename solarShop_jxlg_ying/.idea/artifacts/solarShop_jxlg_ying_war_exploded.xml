@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="solarShop_jxlg_ying:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/solarShop_jxlg_ying_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="solarShop_jxlg_ying" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="solarShop_jxlg_ying/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,52 @@
+<component name="libraryTable">
+  <library name="solor">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/alipay-sdk-java20160317120053.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/antlr-2.7.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/aopalliance.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/aspectjrt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/aspectjweaver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-dbcp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-pool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/hibernate3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jackson-core-lgpl-1.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jackson-mapper-lgpl-1.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javassist-3.9.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jstl-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/junit-4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/mysql-connector-java-5.1.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/ojdbc14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/pingpp-java-2.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/slf4j-api-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/slf4j-nop-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aop-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aspects-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-beans-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-core-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-expression-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-instrument-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jdbc-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-orm-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-tx-3.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-web-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webmvc-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/taobao-sdk-java-auto_1455733249969-20160315.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-support-3.2.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-logging-1.1.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/taobao-sdk-java-auto_1455733249969-20160315-source.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/alipay-sdk-java20160317120053-source.jar!/com/alipay/api" />
+    </SOURCES>
+  </library>
+</component>

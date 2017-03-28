@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<style type="text/css"> 
+#div1 { width:304px; height:222px; position:relative; margin:30px auto 0px;} 
+#div1 img{width:304px; height:222px;} 
+#div1 span { width:100px; height:100px; background:red; left:0px;top:0px; position:absolute; display:none; filter:alpha(opacity:20); opacity:0.2;} 
+.show { width:100%; height:100%; position:absolute; z-index:10px; filter:alpha(opacity:10); opacity:0.1; left:0px; top:0px; } 
+#div2 {width:304px; height:222px; position:relative; display:none; overflow:hidden; margin:0px auto 0px;} 
+#img1 {width:700px; height:500px; position:absolute;} 
+</style> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>JavaScript 图片放大代码</title> 
+<script type="text/javascript"> 
+window.onload=function () 
+{ 
+var oDiv=document.getElementById('div1'); 
+var oShow=oDiv.getElementsByTagName('div')[0]; 
+var oSpan=oDiv.getElementsByTagName('span')[0]; 
+var oImg=document.getElementById('img1'); 
+oShow.onmouseover=function() 
+{ 
+oSpan.style.display='block'; 
+oImg.parentNode.style.display='block'; 
+}; 
+oShow.onmouseout=function() 
+{ 
+oSpan.style.display='none'; 
+oImg.parentNode.style.display='none'; 
+}; 
+oShow.onmousemove=function(ev) 
+{ 
+var oEvent=ev||event; 
+var x=oEvent.clientX-oDiv.offsetLeft-oSpan.offsetWidth/2; 
+var y=oEvent.clientY-oDiv.offsetTop-oSpan.offsetHeight/2; 
+
+if(x<0) 
+{ 
+x=0; 
+} 
+else if(x>oShow.offsetWidth-oSpan.offsetWidth) 
+{ 
+x=oShow.offsetWidth-oSpan.offsetWidth; 
+} 
+if(y<0) 
+{ 
+y=0; 
+} 
+else if(y>oShow.offsetHeight-oSpan.offsetHeight) 
+{ 
+y=oShow.offsetHeight-oSpan.offsetHeight 
+} 
+
+oSpan.style.left=x+'px'; 
+oSpan.style.top=y+'px'; 
+var percentX=x/(oShow.offsetWidth-oSpan.offsetWidth); 
+var percentY=y/(oShow.offsetHeight-oSpan.offsetHeight); 
+var oImgparent=oImg.parentNode; 
+oImg.style.left=-percentX*(oImg.offsetWidth-oImgparent.offsetWidth)+'px'; 
+oImg.style.top=-percentY*(oImg.offsetHeight-oImgparent.offsetHeight)+'px'; 
+}; 
+}; 
+</script> 
+</head> 
+<body> 
+<div id="div1"> 
+<img src="images/product/sunshine.jpg" /> 
+<span></span> 
+<div class="show"></div> 
+</div> 
+<div id="div2"> 
+<img id="img1" src="images/product/sunshine.jpg" /> 
+</div> 
+</body> 
+</html>

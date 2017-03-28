@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+		http://www.springframework.org/schema/tx
+   		http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+   
+   
+ 	<bean id="propertyConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:dbconfig.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${driver}"></property>
+		<property name="url" value="${dburl}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+	</bean>
+   
+	<!-- sessionFactory 会话工厂类 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- <property name="configLocation" value="classpath:hibernate.cfg.xml">  -->
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingLocations">
+			<value>classpath:/com/jxlg/bean/*.hbm.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property> 		
+	</bean>
+	
+	 <!-- Initialization for TransactionManager -->
+   <bean id="transactionManager"
+  			 class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+			
+	<tx:advice id="txAdvice"  transaction-manager="transactionManager">
+      <tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="select*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" />
+      </tx:attributes>
+   </tx:advice>
+	
+	<aop:config>
+      <aop:pointcut id="createOperation" expression="execution(* com.jxlg.service.impl.*.*(..))" />
+      <aop:advisor advice-ref="txAdvice" pointcut-ref="createOperation"/>
+   </aop:config>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>  
+
+
+	<bean id="orderDao" class="com.jxlg.dao.impl.OrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="orderService" class="com.jxlg.service.impl.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>				
+	<bean id="productDao" class="com.jxlg.dao.impl.ProductDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="productService" class="com.jxlg.service.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao"></property>
+	</bean>		
+	<bean id="userDao" class="com.jxlg.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="com.jxlg.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>		
+	<bean id="orderlineDao" class="com.jxlg.dao.impl.OrderlineDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="orderlineService" class="com.jxlg.service.impl.OrderlineServiceImpl">
+		<property name="orderlineDao" ref="orderlineDao"></property>
+	</bean>		
+	<bean id="userInfoDao" class="com.jxlg.dao.impl.UserInfoDapImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userInfoService" class="com.jxlg.service.impl.UserInfoServiceImpl">
+		<property name="userInfoDao" ref="userInfoDao"></property>
+	</bean>		
+	<bean id="paywayDao" class="com.jxlg.dao.impl.PaywayDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="paywayService" class="com.jxlg.service.impl.PaywayService">
+		<property name="paywayDao" ref="paywayDao"></property>
+	</bean>		
+	<bean id="orderStatusDao" class="com.jxlg.dao.impl.OrderStatusDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="orderStatusService" class="com.jxlg.service.impl.OrderStatusServiceImpl">
+		<property name="orderStatusDao" ref="orderStatusDao"></property>
+	</bean>		
+	
+</beans>

@@ -1,0 +1,18 @@
+.dhn-table {
+	margin: 10px auto;
+	height: 100%;
+	font-size: 15px;
+}
+
+.dhn-mytable {
+	width: 100%;
+	margin: 10px auto;
+}
+
+td, th {
+	text-align: center;
+}
+
+#dhn-pagebuttons span {
+	cursor: pointer;
+}
